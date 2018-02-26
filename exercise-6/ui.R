@@ -1,4 +1,5 @@
 library("shiny")
+library(dplyr)
 data(iris)
 
 #Generate names for dropdown menu
@@ -11,7 +12,11 @@ shinyUI(fluidPage(
 
   sidebarPanel(
     selectInput(inputId = 'x_axis', choices = x_colnames, label = "Select x axis variable", selected = 'Sepal.Length'),
-    selectInput(inputId = 'y_axis', choices = y_colnames, label = "Select y axis variable", selected = 'Sepal.Width')
+    selectInput(inputId = 'y_axis', choices = y_colnames, label = "Select y axis variable", selected = 'Sepal.Width'),
+    checkboxGroupInput("overplotting", "Avoid overplotting",
+                       choices = list("Jitter data" = "jitter",
+                                      "Semi-transparency" = "alpha"),
+                       selected = NULL)
   ),
   mainPanel(
     plotOutput('plot')

@@ -1,4 +1,4 @@
-Exercise-6
+# Exercise-6
 
 In this exercise, you'll practice building an interactive ggplotin a Shiny application.
 
@@ -7,9 +7,18 @@ As in previous exercises, you should fork and clone this repository, then follow
 server.R
 
 data(iris)
+
 Write code that will allow your server to create the plot from the Iris dataset. 
 
 ui.R
 
-Write code that will generate a sidebar panel with select inputs that will allow you to change the variables displayed on the x and y axis.
+Write code that will generate a sidebar panel with select inputs that
+will allow you to change the variables displayed on the x and y axis.
+
+## Bonus:
+
+Many flowers have similar values for several petal dimensions.  Add
+widgets that allow the user to avoid overplotting by selecting
+different methods (such as small jittering of points,
+semitransparency, or such).
 
